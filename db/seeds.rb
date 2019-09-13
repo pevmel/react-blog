@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+Category.delete_all
+5.times do
+  Category.create(name: Faker::Beer.unique.brand, description: Faker::Lorem.paragraph)
+end
